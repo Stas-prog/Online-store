@@ -19,8 +19,8 @@ const Cart = () => {
         productName: {original: string};
         quantity: number;
         price: {amount: string};
-        descriptionLines[0]: {name:{original: string}, colorInfo:{original: string}, plainText:{original: string}};
-        descriptionLines[1]: {name:{original: string}, colorInfo:{original: string}};
+        descriptionLines: [{name:{original: string}, colorInfo:{original: string}, plainText:{original: string}},
+         {name:{original: string}, colorInfo:{original: string}}];
     }
 
     return (
