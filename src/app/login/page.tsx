@@ -54,7 +54,7 @@ const LoginPage = () => {
 
     type ResType = {
         loginState: void | string;
-        data: {
+        data?: {
             sessionToken: string
         }
     }
