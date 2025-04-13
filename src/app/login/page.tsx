@@ -51,8 +51,15 @@ const LoginPage = () => {
         e.preventDefault()
         setIsLoading(true)
         setError("")
+
+    type ResType = {
+        loginState: void | StateMachine;
+        data: {
+            sessionToken: string
+        }
+    }
            
-        let response
+        let response: ResType
         
         try {
             switch (mode) {
@@ -92,7 +99,7 @@ const LoginPage = () => {
                 default:
                     break;
             }
-
+console.log(response)
             switch (response.loginState) {
                 case LoginState.SUCCESS :
                     setMessage("Успіх! Ви авторизовані!")
