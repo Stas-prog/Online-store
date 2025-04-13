@@ -14,7 +14,7 @@ const Cart = () => {
     const router = useRouter()
 
     type ItemProps = {
-        _id: number;
+        _id: string;
         image: string;
         productName: {original: string};
         quantity: number;
