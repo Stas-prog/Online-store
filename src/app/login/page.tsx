@@ -53,7 +53,7 @@ const LoginPage = () => {
         setError("")
 
     type ResType = {
-        loginState: void | StateMachine;
+        loginState: void | string;
         data: {
             sessionToken: string
         }
