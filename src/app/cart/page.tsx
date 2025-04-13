@@ -13,6 +13,15 @@ const Cart = () => {
     const {cart, isLoading, removeItem} = useCartStore()
     const router = useRouter()
 
+    type ItemProps = {
+        _id: number;
+        image: string;
+        productName: {original: string};
+        quantity: number;
+        price: {amount: string}
+        descriptionLines: [{name:{original: string}}, {colorInfo:{original: string}}]
+    }
+
     return (
         <div className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative mt-10">
             {!cart.lineItems
@@ -24,7 +33,7 @@ const Cart = () => {
                     {/* LIST  */}
                     <div className="flex flex-col mt-4 gap-8">
                         {/* ITEM  */}
-                        {cart.lineItems.map(item => (
+                        {cart.lineItems.map((item: ItemProps) => (
                          <div className="flex gap-4" key={item._id}>
                             {item.image&&
                             <Image src={wixMedia.getScaledToFillImageUrl(item.image,122,166,{})} alt="" width={122} height={166}

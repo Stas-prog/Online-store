@@ -19,6 +19,15 @@ const handleView = () => {
     cartOpen(prev => !prev)
 }
 
+type ItemProps = {
+    _id: number;
+    image: string;
+    productName: {original: string};
+    quantity: number;
+    price: {amount: string};
+    availability: {status: string}
+}
+
     return (
         <div className="w-max absolute rounded-md p-4 shadow-[0_3px_10px_rgb(0,0,0,0.5)] bg-white top-16 right-0 flex flex-col gap-6 z-50">
             {!cart.lineItems
@@ -30,7 +39,7 @@ const handleView = () => {
                     {/* LIST  */}
                     <div className="flex flex-col mt-4 gap-8">
                         {/* ITEM  */}
-                        {cart.lineItems.map(item => (
+                        {cart.lineItems.map((item: ItemProps) => (
                          <div className="flex gap-4" key={item._id}>
                             {item.image&&
                             <Image src={wixMedia.getScaledToFillImageUrl(item.image,72,96,{})} alt="" width={72} height={96}
