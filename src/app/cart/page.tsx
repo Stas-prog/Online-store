@@ -18,8 +18,10 @@ const Cart = () => {
         image: string;
         productName: {original: string};
         quantity: number;
-        price: {amount: string}
-        descriptionLines: [{name:{original: string}}, {colorInfo:{original: string}}]
+        price: {amount: string};
+        descriptionLines: [{name:{original: string}}];
+        descriptionLines: [{colorInfo:{original: string}}];
+        descriptionLines: [{plainText:{original: string}}];
     }
 
     return (
