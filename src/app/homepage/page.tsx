@@ -3,6 +3,11 @@ import ProductList from "@/components/productlist"
 import NewProdList from "@/components/newprodlist"
 import Slider from "@/components/slider"
 import { Suspense } from "react"
+// import dynamic from "next/dynamic"
+
+// const CategoryList = dynamic(() => import("@/components/categorylist"))
+// const ProductList = dynamic(() => import("@/components/productlist"))
+// const NewProdList = dynamic(() => import("@/components/newprodlist"))
 
 
 const HomePage = ({ searchParams }: { searchParams: any }) => {

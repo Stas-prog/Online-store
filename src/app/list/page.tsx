@@ -3,6 +3,10 @@ import Filter from "@/components/filter"
 import ProductList from "@/components/productlist"
 import { wixClientServer } from "@/lib/wixClientServer"
 import { Suspense } from "react"
+import dynamic from "next/dynamic"
+
+// const ProductList = dynamic(() => import("@/components/productlist"))
+
 
 
 const ListPage = async ({ searchParams }: { searchParams: any }) => {
