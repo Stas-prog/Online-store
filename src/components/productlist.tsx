@@ -37,7 +37,7 @@ const ProductList = async ({ categoryId, limit, searchParams }: { categoryId: st
                 .ascending(sortBy)
                 .skip(page ? parseInt(page) * (limit || per_page) : 0)
                 .find()
-             console.log(res)   
+
             return <div className="flex justify-between gap-x-8 gap-y-16 flex-wrap">
                 {res.items.map((product: products.Product) => {
                     return (

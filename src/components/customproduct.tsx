@@ -34,7 +34,7 @@ const CustomProduct = ({ productId, variants, productOptions }:
             )
         })
     }
-    console.log(variants)
+
     return (
         <div className="flex flex-col gap-6">
             {productOptions.map((option) => (
@@ -45,9 +45,6 @@ const CustomProduct = ({ productId, variants, productOptions }:
                         {option.choices?.map((choice: any) => {
                             const disabled = !isVariantInStock({ ...selectedOptions, [option.name!]: choice.description! })
                             const selected = selectedOptions[option.name!] === choice.description
-                            console.log(choice.description)
-                            console.log(choice.value)
-                            console.log(selectedOptions[option.name!])
                             const clickHandler = disabled ? undefined : () => handleOptionSelect(option.name!, choice.description!)
 
                             return option.name === "Колір" ? (
@@ -88,21 +85,6 @@ const CustomProduct = ({ productId, variants, productOptions }:
             <Add productId={productId}
                 variantId={selectedVariant?._id || "00000000-0000-0000-0000-000000000000"}
                 stockNumber={selectedVariant?.stock?.quantity || 0} />
-            {/* 
-            <ul className="flex items-center gap-3">
-
-                <li className="w-8 h-8 rounded-full ring-1 ring-gray-300 cursor-pointer relative bg-blue-500"></li>
-                <li className="w-8 h-8 rounded-full ring-1 ring-gray-300 cursor-not-allowed relative bg-green-500">
-                    <div className="absolute w-10 h-[3px] bg-z  rotate-45 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
-                </li>
-            </ul> */}
-            {/* // <h4 className="font-medium">Вибрати розмір</h4>
-            // <ul className="flex items-center gap-3">
-            //     <li className="ring-1 ring-z text-z rounded-md px-4 py-1 cursor-pointer text-sm">Малий</li>
-            //     <li className="ring-1 ring-z text-white bg-z rounded-md px-4 py-1 cursor-pointer text-sm">Середній</li>
-            //     <li className="ring-1 ring-pink-200 text-white bg-pink-200 rounded-md px-4 py-1 cursor-not-allowed text-sm">Великий</li>
-            // </ul> */}
-
         </div>
     )
 }

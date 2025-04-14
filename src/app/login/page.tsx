@@ -6,7 +6,6 @@ import { LoginState } from "@wix/sdk"
 // import loggedIn from "@wix/sdk"
 import Cookies from "js-cookie"
 import { useRouter } from "next/navigation"
-import { members } from "@wix/members";
 
 
 enum MODE {

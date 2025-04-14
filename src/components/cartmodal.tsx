@@ -11,6 +11,7 @@ const CartModal = ({cartOpen}: any) => {
     const wixClient = useWixClient()
 
     const {cart, isLoading, removeItem} = useCartStore()
+    
     const router = useRouter()
 
 const handleView = () => {

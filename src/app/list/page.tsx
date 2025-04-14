@@ -12,10 +12,9 @@ const ListPage = async ({ searchParams }: { searchParams: any }) => {
     let searchPar = await searchParams
 
     const category = searchPar.cat
-    console.log(category)
 
     const cats = await wixClient.collections.getCollectionBySlug(category || "all-products")
-console.log(cats)
+
     return (
         <div className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative mt-10">
             {/* CAMPAIGN  */}

@@ -13,15 +13,7 @@ const Cart = () => {
     const {cart, isLoading, removeItem} = useCartStore()
 
     const router = useRouter()
-    // type ItemProps = {
-    //     _id: string;
-    //     image: string;
-    //     productName: {original: string};
-    //     quantity: number;
-    //     price: {amount: string};
-    //     descriptionLines: any[];
-    // }
-
+    
     return (
         <div className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative mt-10">
             {!cart.lineItems
