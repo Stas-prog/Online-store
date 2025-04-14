@@ -2,11 +2,9 @@ import Image from "next/image"
 import Filter from "@/components/filter"
 import ProductList from "@/components/productlist"
 import { wixClientServer } from "@/lib/wixClientServer"
-import { Suspense } from "react"
-import dynamic from "next/dynamic"
+// import { Suspense } from "react"
 
-// const ProductList = dynamic(() => import("@/components/productlist"))
-
+export const dynamic = 'force-dynamic'
 
 
 const ListPage = async ({ searchParams }: { searchParams: any }) => {
@@ -21,7 +19,7 @@ const ListPage = async ({ searchParams }: { searchParams: any }) => {
 
     return (
         <div className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative mt-10">
-            {/* CAMPAIGN  */}
+            {/* SALE */}
             <div className="bg-pink-200 px-4 hidden sm:flex justify-between h-64">
                 <div className="w-2/3 flex flex-col items-center justify-center gap-8">
                     <h1 className="text-4xl font-semibold leading-[48px] text-gray-700">Отримай до 50% знижки
@@ -37,10 +35,10 @@ const ListPage = async ({ searchParams }: { searchParams: any }) => {
             <Filter />
             {/* PRODUCTS  */}
             <h1 className="mt-12 text-xl font-semibold">{cats.collection?.name} для тебе!</h1>
-            <Suspense fallback={"loading..."}>
+            {/* <Suspense fallback={"loading..."}> */}
                 <ProductList categoryId={cats.collection?._id || "00000000-000000-000000-000000000001"}
                     searchParams={searchParams} />
-            </Suspense>
+            {/* </Suspense> */}
         </div>
     )
 }
