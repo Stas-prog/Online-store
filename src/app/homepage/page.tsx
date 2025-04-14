@@ -1,36 +1,13 @@
-// 'use server'
-
-
 import CategoryList from "@/components/categorylist"
 import ProductList from "@/components/productlist"
 import NewProdList from "@/components/newprodlist"
 import Slider from "@/components/slider"
 import { Suspense } from "react"
-// import { wixClientServer } from "@/lib/wixClientServer"
-// import { useWixClient } from "@/hooks/useWixClient"
-// import { useEffect } from "react"
 
 
+const HomePage = ({ searchParams }: { searchParams: any }) => {
 
-const HomePage = async ({ searchParams }: { searchParams: any }) => {
-
-  // const wixClient = useWixClient()
-
-  // useEffect(() => {
-  //   const getProducts = async () => {
-  //     const res = await wixClient.products.queryProducts().find();
-  //     console.log(res)
-  //   }
-
-  //   getProducts()
-  // }, [wixClient])
-  // const wixClient = await wixClientServer()
-
-  // const res = await wixClient.products.queryProducts().find();
-  // console.log(res)
-
-
-  return (
+    return (
     <div className=''>
       <Slider />
       <div className="mt-24 px-4 md:px-8 lg:px-16">
