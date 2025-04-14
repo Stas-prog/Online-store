@@ -9,7 +9,6 @@ const NewProdList = async ({searchParams}: {searchParams?: any}) => {
     const wixClient = await wixClientServer()
 
     const cats = await wixClient.collections.getCollectionBySlug("нові-товари")
-console.log(cats)
 
     return (
         <div className = "mt-3">

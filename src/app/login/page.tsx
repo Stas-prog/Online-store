@@ -13,7 +13,8 @@ enum MODE {
     LOGIN = "LOGIN",
     REGISTER = "REGISTER",
     RESET_PASSWORD = "RESET_PASSWORD",
-    EMAIL_VERIFICATION = "EMAIL_VERIFICATION"
+    EMAIL_VERIFICATION = "EMAIL_VERIFICATION",
+    OWNER_APPROVAL = "Ваш акаунт очікує на підтвердження!"
 }
 
 
@@ -52,14 +53,8 @@ const LoginPage = () => {
         setIsLoading(true)
         setError("")
 
-    type ResType = {
-        loginState: void | string;
-        data?: {
-            sessionToken: string
-        }
-    }
            
-        let response: ResType
+        let response: any
         
         try {
             switch (mode) {
@@ -99,12 +94,11 @@ const LoginPage = () => {
                 default:
                     break;
             }
-console.log(response)
+
             switch (response.loginState) {
                 case LoginState.SUCCESS :
                     setMessage("Успіх! Ви авторизовані!")
                     const tokens = await wixClient.auth.generateVisitorTokens();
-                    console.log(tokens)                    
                     wixClient.auth.setTokens(tokens)
                     Cookies.set("refreshToken", JSON.stringify(tokens.refreshToken), { expires: 2 })
                     router.push("/homepage")
@@ -126,7 +120,7 @@ console.log(response)
                     case LoginState.EMAIL_VERIFICATION_REQUIRED :
                         setMode(MODE.EMAIL_VERIFICATION)
                     case LoginState.OWNER_APPROVAL_REQUIRED :
-                        setMode("Ваш акаунт очікує на підтвердження!")
+                        setMode(MODE.OWNER_APPROVAL)
 
                 default:
                     break;

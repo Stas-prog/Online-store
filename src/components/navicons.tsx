@@ -7,7 +7,7 @@ import { useState, useEffect } from "react"
 import CartModal from "./cartmodal"
 import { useWixClient } from "@/hooks/useWixClient"
 import Cookies from "js-cookie"
-import {useCartStore} from "../../src/hooks/useCartStore.ts"
+import {useCartStore} from "@/hooks/useCartStore"
 
 
 
@@ -17,7 +17,7 @@ const NavIcons = () => {
 //     console.log(isLoggedIn)
     const isLoggedIn = false
     const [isProfileOpen, setIsProfileOpen] = useState(false)
-    const [isCartOpen, setIsCartOpen] = useState(false)
+    const [isCartOpen, setIsCartOpen] = useState<boolean>(false)
     const [isLoading, setIsLoading] = useState(false)
     const router = useRouter()
 
@@ -26,8 +26,7 @@ const NavIcons = () => {
         if (!isLoggedIn) {
             router.push("/login")
         } 
-            setIsProfileOpen(prev => !prev)
-        
+            setIsProfileOpen(prev => !prev)    
     }
 
     const handleLogout = async () => {

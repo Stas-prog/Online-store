@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "": "file:",
-    "@wix/ecom": "^1.0.1027",
+    "@wix/ecom": "^1.0.1055",
     "@wix/members": "^1.0.216",
     "@wix/sdk": "^1.15.16",
     "@wix/stores": "^1.0.402",

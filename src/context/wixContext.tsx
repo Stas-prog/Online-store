@@ -20,9 +20,7 @@ const wixClient = createClient(
     auth: OAuthStrategy({
         clientId: process.env.NEXT_PUBLIC_WIX_CLIENT_ID!,
         tokens: {
-            refreshToken: {
-                value: ""
-            },
+            refreshToken,
 
             accessToken: {
                 value: "",
@@ -32,8 +30,7 @@ const wixClient = createClient(
         },
     }),
 });
-console.log(refreshToken)
-console.log(accessToken)
+
 wixClient.auth.setTokens({refreshToken, accessToken})
 Cookies.set("refreshToken", JSON.stringify(refreshToken), { expires: 2 })
 

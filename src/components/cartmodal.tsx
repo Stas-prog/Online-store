@@ -1,26 +1,25 @@
 'use client'
 
 import Image from "next/image"
-import {useCartStore} from "../../src/hooks/useCartStore"
+import {useCartStore} from "@/hooks/useCartStore"
 import {media as wixMedia} from "@wix/sdk"
-import {useWixClient} from "../../src/hooks/useWixClient"
+import {useWixClient} from "@/hooks/useWixClient"
 import {useRouter} from "next/navigation"
 
-const CartModal = ({cartOpen}) => {
+const CartModal = ({cartOpen}: any) => {
 
     const wixClient = useWixClient()
 
     const {cart, isLoading, removeItem} = useCartStore()
-    console.log(cart)
     const router = useRouter()
 
 const handleView = () => {
     router.push('/cart')
-    cartOpen(prev => !prev)
+    cartOpen((prev: any) => !prev)
 }
 
 type ItemProps = {
-    _id: number;
+    _id: string;
     image: string;
     productName: {original: string};
     quantity: number;

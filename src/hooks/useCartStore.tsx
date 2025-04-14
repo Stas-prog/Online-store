@@ -1,15 +1,14 @@
 import { create } from 'zustand'
-import {carentCart} from "@wix/ecom"
+import {currentCart} from "@wix/ecom"
 
 type CartState = {
-cart: curentCart.Cart,
+cart: any,
 isLoading: boolean,
 counter: number,
-getCart:(wixClient: wixClient) => void,
-addItem:(wixClient: wixClient, productId: string, variantId: string, quantity: number ) => void,
-removeItem:(wixClient: wixClient, itemId: string) => void
+getCart:(wixClient: any) => void,
+addItem:(wixClient: any, productId: string, variantId: string, quantity: number ) => void,
+removeItem:(wixClient: any, itemId: string) => void
 }
-
 
 export const useCartStore = create<CartState>((set) => ({
   cart: [],

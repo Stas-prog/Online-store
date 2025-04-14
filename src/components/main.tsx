@@ -20,7 +20,7 @@ const Main = (() => {
                 <div  className=" flex  p-5 w-350 h-200">
                     <div className="flex flex-col gap-4">
                         <input
-                            className="mt-3 w-max"
+                            className="mt-3 w-max rounded-md"
                             placeholder="Введіть ваш пароль..."
                             value={password}
                             onChange={e => setPassword(e.target.value)}

@@ -2,13 +2,13 @@
 
 import Image from "next/image"
 import { useRouter } from "next/navigation"
-import {useRef} from "react"
+// import {useRef} from "react"
 
 
 const SearchBar = () => {
 
     const router = useRouter()
-    const input = useRef()
+    // const input = useRef<HTMLInputElement>(null)
 
     const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -17,12 +17,12 @@ const SearchBar = () => {
 
         if (name) {
             router.push(`/list?name=${name}`)
-            input.current.value = ""
+            // input.current.value = ""
         }
     }
 
     return (<form className="flex items-center justify-between gap-4 bg-gray-300 p-2 rounded-md flex-1" onSubmit={handleSearch}>
-        <input type="text" ref={input} name="name" placeholder="Пошук" className="flex-1 bg-transparent outline-none" />
+        <input type="text" name="name" placeholder="Пошук" className="flex-1 bg-transparent outline-none" />
         <button className="cursor-pointer">
             <Image src="/search.png" alt="" width={16} height={16} />
         </button>

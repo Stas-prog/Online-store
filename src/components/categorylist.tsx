@@ -8,7 +8,7 @@ const CategoryList = async () => {
     const wixClient = await wixClientServer()
 
     const categorys = await wixClient.collections.queryCollections().find()
-console.log(categorys)
+    
     return (
         <div className="px-4 overflow-x-scroll scrollbar-hide">
             <div className="flex gap-4 md:gap-8">
