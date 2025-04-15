@@ -7,7 +7,7 @@ env: {
     NEXT_PUBLIC_WIX_CLIENT_ID: process.env.NEXT_PUBLIC_WIX_CLIENT_ID,
     FEATURED_PRODUCTS_CATEGORY_ID: process.env.FEATURED_PRODUCTS_CATEGORY_ID,
     NEXT_PUBLIC_WIX_APP_ID: process.env.NEXT_PUBLIC_WIX_APP_ID
-}
+},
 
     images: {
         remotePatterns: [
