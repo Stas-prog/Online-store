@@ -16,11 +16,11 @@ const Main = (() => {
     }
 
     return (
-           <div className="absolute top-0 bottom-0 left-0 right-0 flex justify-center items-center bg-slate-600 z-50" >
+           <div className="absolute top-0 bottom-0 left-0 right-0 flex justify-center bg-slate-600 z-50" >
                 <div  className=" flex  p-5 w-350 h-200">
-                    <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-4 mt-11">
                         <input
-                            className="mt-3 w-max rounded-md"
+                            className="mt-3 w-max rounded-md py-1"
                             placeholder="Введіть ваш пароль..."
                             value={password}
                             onChange={e => setPassword(e.target.value)}
@@ -28,7 +28,7 @@ const Main = (() => {
                         />
 
                         <button
-                           className="rounded-3xl text-sm py-3 px-5 bg-blue-600 text-yellow-700 w-max"
+                           className="rounded-3xl text-sm py-3 px-5 bg-blue-600 text-yellow-500 w-full"
                             onClick={click}
                         >Enter
                         </button>
