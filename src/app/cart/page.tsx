@@ -18,7 +18,7 @@ const Cart = () => {
         <div className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative mt-10">
             {!cart.lineItems
              ?
-                <div>Cart is Empty</div> 
+                <div>Кошик порожній</div> 
                 :
                 <div className="bg-white">
                     <h2 className="text-xl mb-4">Кошик покупок</h2>

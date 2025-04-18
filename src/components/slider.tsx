@@ -52,7 +52,7 @@ const Slider = () => {
                         <div className="h-1/2 lg:w-1/2 lg:h-full flex flex-col items-center justify-center gap-8 lg:gap-16 2xl:gap-20 text-center">
                             <h2 className="text-xl lg:text-3xl 2xl:text-5xl">{slide.description}</h2>
                             <h1 className="text-5xl lg:text-6xl 2xl:text-8xl font-semibold">{slide.title}</h1>
-                            <Link href={slide.url}>
+                            <Link href="/list">
                                 <button className="rounded-md bg-black text-white py-3 px-4">SHOP NOW</button>
                             </Link>
                         </div>
