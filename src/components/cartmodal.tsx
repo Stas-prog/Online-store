@@ -32,7 +32,7 @@ type ItemProps = {
         <div className="w-max absolute rounded-md p-4 shadow-[0_3px_10px_rgb(0,0,0,0.5)] bg-white top-16 right-0 flex flex-col gap-6 z-50">
             {!cart.lineItems
                 ?
-                (<div>Cart is Empty</div>) 
+                (<div>Кошик порожній</div>) 
                 :
                 (<div className="bg-white">
                     <h2 className="text-xl mb-4">Кошик покупок</h2>
