@@ -49,7 +49,7 @@ const Footer = () => {
                     <div className="flex flex-col justify-between">
                         <h1 className="font-medium text-lg">Допомога</h1>
                         <div className="flex flex-col gap-6">
-                            <Link href="">Сервіс</Link>
+                            <Link href="/corp">Корпоративні замовлення</Link>
                             <Link href="">Мій акаунт</Link>
                             <Link href="">Знайти нас</Link>
                             <Link href="">Права і обов'язки</Link>

@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-// import { transform } from "next/dist/build/swc/generated-native"
 
 const slides = [
     {

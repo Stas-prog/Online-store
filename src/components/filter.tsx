@@ -41,9 +41,6 @@ const Filter = () => {
                     <option value="сорочки">Футболки</option>
                     <option value="черевики">Черевики</option>
                 </select>
-                {/* <select name="size" id="" className="px-4 py-2 text-xs rounded-2xl font-medium bg-[#EBEDED]">
-                    <option value="">Всі фільтри</option>
-                </select> */}
             </div>
             <div className="gap-6">
                 <select name="sort" id="" className="px-4 py-2 text-xs rounded-2xl font-medium bg-white ring-1 ring-gray-400"

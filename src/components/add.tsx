@@ -1,13 +1,14 @@
 'use client'
 
 import { useState } from "react"
-import {useWixClient} from "../../src/hooks/useWixClient"
-import {useCartStore} from "../../src/hooks/useCartStore"
+import { useWixClient } from "../../src/hooks/useWixClient"
+import { useCartStore } from "../../src/hooks/useCartStore"
 
 
 const Add = ({ productId, variantId, stockNumber }: { productId: string, variantId: string, stockNumber: number }) => {
     const [quantity, setQuantity] = useState(1)
-const wixClient=useWixClient()
+
+    const wixClient = useWixClient()
 
     const handleQuont = (type: 'i' | 'd') => {
         if (type === 'i' && quantity < stockNumber) {
@@ -18,7 +19,7 @@ const wixClient=useWixClient()
         }
     }
 
-    const {addItem, isLoading} = useCartStore()
+    const { addItem, isLoading } = useCartStore()
 
     return (
         <div className="flex flex-col gap-4">
@@ -39,8 +40,8 @@ const wixClient=useWixClient()
                 <button
                     className="w-40 text-sm font-semibold rounded-3xl ring-1 ring-z text-z py-2 px-4 hover:bg-z
              hover:text-white disabled:cursor-not-allowed disabled:bg-pink-300 disabled:ring-0 disabled:ring-none disabled:text-white"
-             onClick={()=>addItem(wixClient, productId, variantId, quantity)}
-             disabled={isLoading}>
+                    onClick={() => addItem(wixClient, productId, variantId, quantity)}
+                    disabled={isLoading}>
                     Додати в кошик
                 </button>
             </div >
