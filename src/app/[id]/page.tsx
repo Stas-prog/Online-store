@@ -3,6 +3,7 @@ import CustomProduct from "@/components/customproduct"
 import ProductImages from "@/components/productimages"
 import { wixClientServer } from "@/lib/wixClientServer"
 import { notFound } from "next/navigation"
+import DOMPurify from "isomorphic-dompurify"
 
 
 
@@ -18,7 +19,6 @@ const SinglePage = async ({ params }: { params: Promise<{ id: string }> }) => {
     if (!products.items[0]) {
         return notFound()
     }
-
     const product = products.items[0]
 
     return (
@@ -30,7 +30,7 @@ const SinglePage = async ({ params }: { params: Promise<{ id: string }> }) => {
             {/* TEXTS  */}
             <div className="w-full lg:w-1/2 flex flex-col gap-6 mt-7">
                 <h1 className="text-4xl font-medium">{product.name}</h1>
-                <p className="text-gray-500">{product.description}</p>
+                <p className="text-gray-500" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize((product.description || '')) }}></p>
                 <div className="h-[2px] bg-gray-300"></div>
                 {product.price?.price === product.price?.discountedPrice ?
                     (<h2 className="text-2xl font-medium">{product.price?.price} грн</h2>) :
@@ -48,7 +48,7 @@ const SinglePage = async ({ params }: { params: Promise<{ id: string }> }) => {
                 {product.additionalInfoSections?.map((section: any) => (
                     <div className="text-sm" key={section.title}>
                         <h4 className="font-medium mb-4">{section.title}</h4>
-                        <p className="">{section.description}</p>
+                        <p className="" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize((section.description || '')) }}></p>
                     </div>)
                 )}
 
