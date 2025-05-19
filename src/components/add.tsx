@@ -33,7 +33,7 @@ const Add = ({ productId, variantId, stockNumber }: { productId: string, variant
                     </div>
                     {stockNumber < 1 ?
                         (<div className="text-sm">Товар відсутній</div>) :
-                        (<div className="text-sm">Лише <span className="text-orange-500">{stockNumber} штук</span> залишилося!
+                        (<div className="text-sm">Лише <span className="text-orange-500">{stockNumber - quantity} штук</span> залишилося!
                             <br />Не прогав!
                         </div>)}
                 </div>
